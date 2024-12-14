@@ -1,8 +1,7 @@
-'use client'
+'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { AlignJustify , ShoppingCart ,  ChevronDown ,  Search ,CircleUserRound } from 'lucide-react';
-
+import { AlignJustify, ShoppingCart, ChevronDown, Search, CircleUserRound } from 'lucide-react';
 
 const Navbar = () => {
   // State to handle mobile menu visibility
@@ -12,18 +11,28 @@ const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md px-4 py-2 ">
+    <nav className="bg-white fixed w-full top-0 left-0 z-50 shadow-md px-4 py-2">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between">
+        {/* Hamburger Icon on the Left (Mobile Layout) */}
+        <div className="md:hidden flex items-center mr-4">
+          <button
+            onClick={() => setMobileMenu(!mobileMenu)} // Toggle mobile menu visibility
+            className="text-gray-800"
+          >
+            <AlignJustify className="text-2xl" />
+          </button>
+        </div>
+
         {/* Logo */}
         <div className="text-2xl font-extrabold ml-14 text-gray-800">
-          <Link href="/">SHOP.CO</Link>
+          SHOP.CO
         </div>
 
         {/* Desktop Navigation Links */}
         <ul className="hidden md:flex space-x-8 items-center">
           {/* Dropdown for Shop */}
           <li className="relative group">
-          <button
+            <button
               className="flex items-center text-gray-800"
               onClick={() => setDropdown(!dropdown)} // Toggle dropdown visibility
             >
@@ -33,13 +42,13 @@ const Navbar = () => {
             {dropdown && (
               <ul className="absolute left-0 bg-white shadow-lg rounded-md w-40 mt-2">
                 <li className="px-4 py-2 hover:bg-gray-100">
-                  <Link href="#">Category 1</Link>
+                  <Link href="/Mens">MEN</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-100">
-                  <Link href="#">Category 2</Link>
+                  <Link href="#">WOMEN 2</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-100">
-                  <Link href="#">Category 3</Link>
+                  <Link href="#">KIDS</Link>
                 </li>
               </ul>
             )}
@@ -54,7 +63,7 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search..."
-            className="bg-gray-100 text-gray-600 px-4 py-2 rounded-3xl focus:outline-none w-72 pl-10"
+            className="bg-[#F2F0F1] text-gray-600 px-4 py-2 rounded-3xl focus:outline-none w-72 pl-10"
           />
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 w-5 h-5" /> {/* Search icon */}
         </div>
@@ -62,18 +71,12 @@ const Navbar = () => {
         {/* Cart & User Icons (only visible on medium and larger screens) */}
         <div className="flex items-center space-x-6">
           <button className="text-gray-800">
-            <span role="img" aria-label="cart" className="text-xl"><i><ShoppingCart /></i></span>
+            <ShoppingCart className="text-xl" />
           </button>
-          <button className="text-gray-800"><CircleUserRound /></button>
+          <button className="text-gray-800">
+            <CircleUserRound />
+          </button>
         </div>
-
-        {/* Mobile Menu Icon (Hamburger) */}
-        <button
-          onClick={() => setMobileMenu(!mobileMenu)} // Toggle mobile menu visibility
-          className="md:hidden text-gray-800 -ml-28"
-        >
-          <span role="img" aria-label="menu" className="text-2xl"><i><AlignJustify /></i></span>
-        </button>
       </div>
 
       {/* Mobile Menu */}
@@ -88,7 +91,7 @@ const Navbar = () => {
               <input
                 type="text"
                 placeholder="Search..."
-                className="bg-gray-100 text-gray-600 px-4 py-2  rounded-lg focus:outline-none w-full"
+                className="bg-gray-100 text-gray-600 px-4 py-2 rounded-lg focus:outline-none w-full"
               />
             </li>
             <li><Link href="#">Sign In</Link></li>
