@@ -2,7 +2,7 @@ import Image from 'next/image'; // For optimized image usage in Next.js
 
 const HeroSection = () => {
   return (
-    <section className="flex flex-col lg:flex-row items-center px-6 lg:px-20 py-12 bg-[#f2f0f1] h-auto w-full max-w-screen-xl mx-auto">
+    <section className="flex flex-col lg:flex-row items-center px-6 lg:px-20 py-12 bg-[#f2f0f1] overflow-hidden h-auto w-full max-w-screen-xl mx-auto">
       {/* Left Section (Text Content) */}
       <div className="flex flex-col space-y-6 lg:max-w-lg text-center lg:text-left">
         {/* Heading */}
@@ -11,7 +11,6 @@ const HeroSection = () => {
           <span className="block">THAT MATCHES</span>
           <span className="block">YOUR STYLES</span>
         </h1>
-
         {/* Paragraph */}
         <p className="text-base lg:text-lg text-gray-700 leading-7">
           Browse through our diverse range of meticulously designed
@@ -28,7 +27,11 @@ const HeroSection = () => {
       </div>
 
       {/* Right Section (Model Picture for Large Screens) */}
+       {/* vectors */}
+       
+        
       <div className="hidden lg:block w-[500px] h-[663px] relative top-10 -right-12">
+        
         <Image
           src="/hero.png" 
           alt="Model"
@@ -37,8 +40,7 @@ const HeroSection = () => {
           className="rounded-lg"
         />
       </div>
-
-      {/* Mobile Layout Section */}
+    {/* Mobile Layout Section */}
       <div className="lg:hidden flex flex-col items-center space-y-6 mt-8">
         {/* Mobile Model Image */}
         <div className="relative w-[280px] h-[300px]">

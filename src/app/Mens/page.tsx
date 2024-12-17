@@ -10,7 +10,7 @@ const MenClothingPage = () => {
   ];
 
   return (
-    <div className="p-6 py-20">
+    <div className="p-6 py-20 overflow-hidden">
       {/* Breadcrumb */}
       <div className="text-sm text-gray-500 mb-4">
         <span>HOME &gt; SHOP &gt; MEN &gt; T-SHIRTS</span>
@@ -107,25 +107,22 @@ const MenClothingPage = () => {
         <div className="flex justify-center space-x-8">
           <button
             onClick={() => setTab("details")}
-            className={`${
-              tab === "details" ? "border-b-2 border-black" : ""
-            } pb-2`}
+            className={`${tab === "details" ? "border-b-2 border-black" : ""
+              } pb-2`}
           >
             Product Details
           </button>
           <button
             onClick={() => setTab("reviews")}
-            className={`${
-              tab === "reviews" ? "border-b-2 border-black" : ""
-            } pb-2`}
+            className={`${tab === "reviews" ? "border-b-2 border-black" : ""
+              } pb-2`}
           >
             Ratings & Reviews
           </button>
           <button
             onClick={() => setTab("faqs")}
-            className={`${
-              tab === "faqs" ? "border-b-2 border-black" : ""
-            } pb-2`}
+            className={`${tab === "faqs" ? "border-b-2 border-black" : ""
+              } pb-2`}
           >
             FAQs
           </button>
@@ -185,38 +182,71 @@ const MenClothingPage = () => {
       <div className="mt-12">
         <h2 className="text-2xl font-bold mb-4 text-center">You Might Also Like These</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-          <div>
-            <img
-              src="/similar-product1.jpg"
-              alt="Product 1"
-              className="w-full h-[200px] object-cover rounded-lg"
-            />
-            <p className="mt-2 text-center">Men's V-Neck T-Shirt</p>
-          </div>
-          <div>
-            <img
-              src="/similar-product2.jpg"
-              alt="Product 2"
-              className="w-full h-[200px] object-cover rounded-lg"
-            />
-            <p className="mt-2 text-center">Men's Polo T-Shirt</p>
-          </div>
-          <div>
-            <img
-              src="/similar-product3.jpg"
-              alt="Product 3"
-              className="w-full h-[200px] object-cover rounded-lg"
-            />
-            <p className="mt-2 text-center">Men's Slim Fit T-Shirt</p>
-          </div>
-          <div>
-            <img
-              src="/similar-product4.jpg"
-              alt="Product 4"
-              className="w-full h-[200px] object-cover rounded-lg"
-            />
-            <p className="mt-2 text-center">Men's Crew Neck T-Shirt</p>
-          </div>
+        <div>
+  <img
+    src="/polo.png"
+    alt="Polo with Contrast Trims"
+    className="w-[295px] h-[298px] object-cover rounded-lg"
+  />
+  <p className="mt-2 text-center">Men's V-Neck T-Shirt</p>
+  <div className="flex justify-center mt-1 text-yellow-500">
+    <span className="text-lg mr-1">★</span>
+    <span className="text-lg mr-1">★</span>
+    <span className="text-lg mr-1">★</span>
+    <span className="text-lg mr-1">★</span>
+    <span className="text-lg text-gray-400">☆</span>
+  </div>
+  <p className="text-center text-gray-700">$19.99</p>
+</div>
+<div>
+  <img
+    src="/gradient.png"
+    alt="Gradient Graphic T-shirt"
+    className="w-[295px] h-[298px] object-cover rounded-lg"
+  />
+  <p className="mt-2 text-center">Men's Polo T-Shirt</p>
+  <div className="flex justify-center mt-1 text-yellow-500">
+    <span className="text-lg mr-1">★</span>
+    <span className="text-lg mr-1">★</span>
+    <span className="text-lg mr-1">★</span>
+    <span className="text-lg mr-1">★</span>
+    <span className="text-lg text-gray-400">☆</span>
+  </div>
+  <p className="text-center text-gray-700">$24.99</p>
+</div>
+<div>
+  <img
+    src="/polo2.png"
+    alt="Polo with Tipping Details"
+    className="w-[295px] h-[298px] object-cover rounded-lg"
+  />
+  <p className="mt-2 text-center">Men's Slim Fit T-Shirt</p>
+  <div className="flex justify-center mt-1 text-yellow-500">
+    <span className="text-lg mr-1">★</span>
+    <span className="text-lg mr-1">★</span>
+    <span className="text-lg mr-1">★</span>
+    <span className="text-lg text-gray-400">☆</span>
+    <span className="text-lg text-gray-400">☆</span>
+  </div>
+  <p className="text-center text-gray-700">$22.99</p>
+</div>
+<div>
+  <img
+    src="/blackstrips.png"
+    alt="Black Striped T-shirt"
+    className="w-[295px] h-[298px] object-cover rounded-lg"
+  />
+  <p className="mt-2 text-center">Men's Crew Neck T-Shirt</p>
+  <div className="flex justify-center mt-1 text-yellow-500">
+    <span className="text-lg mr-1">★</span>
+    <span className="text-lg mr-1">★</span>
+    <span className="text-lg text-gray-400">☆</span>
+    <span className="text-lg text-gray-400">☆</span>
+    <span className="text-lg text-gray-400">☆</span>
+  </div>
+  <p className="text-center text-gray-700">$18.99</p>
+</div>
+
         </div>
       </div>
     </div>

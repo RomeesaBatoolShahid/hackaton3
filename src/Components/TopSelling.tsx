@@ -34,7 +34,7 @@ const TopSelling = () => {
   ];
 
   return (
-    <section className="container mx-auto px-4 py-8">
+    <section className="container mx-auto px-4 py-8 overflow-hidden">
       <h2 className="text-2xl font-extrabold text-center mb-8">Top Selling</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {products.map((product) => (

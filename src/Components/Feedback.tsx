@@ -31,7 +31,7 @@ const OurHappyCustomers = () => {
   };
 
   return (
-    <section className="px-6 lg:px-20 py-12 bg-gray-100">
+    <section className="px-6 lg:px-20 py-12 bg-gray-100 overflow-hidden">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-3xl font-extrabold text-gray-800">Our Happy Customers</h2>
         <div className="flex space-x-4">

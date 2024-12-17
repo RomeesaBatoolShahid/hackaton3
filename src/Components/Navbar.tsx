@@ -11,7 +11,7 @@ const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
 
   return (
-    <nav className="bg-white fixed w-full top-0 left-0 z-50 shadow-md px-4 py-2">
+    <nav className="bg-white fixed w-full top-0 left-0 z-50 shadow-md px-4 py-2 ">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between">
         {/* Hamburger Icon on the Left (Mobile Layout) */}
         <div className="md:hidden flex items-center mr-4">
@@ -70,8 +70,8 @@ const Navbar = () => {
 
         {/* Cart & User Icons (only visible on medium and larger screens) */}
         <div className="flex items-center space-x-6">
-          <button className="text-gray-800">
-            <ShoppingCart className="text-xl" />
+          <button className="text-gray-800"><Link href="/Cart">
+            <ShoppingCart className="text-xl" /></Link>
           </button>
           <button className="text-gray-800">
             <CircleUserRound />

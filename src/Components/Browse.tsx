@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const BrowseDressStyle = () => {
     // Image sources for the categories
@@ -34,7 +35,7 @@ const BrowseDressStyle = () => {
 
 
     return (
-        <section className="px-6 lg:px-20 py-12 bg-gray-100 ">
+        <section className="px-6 lg:px-20 py-12 bg-gray-100 overflow-hidden ">
             {/* Section Header */}
             <div className='hidden lg:block'>
             <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-8">
@@ -44,14 +45,14 @@ const BrowseDressStyle = () => {
             {/* First Row */}
             <div className="flex justify-between mb-8 ">
                 {/* Casual - 407px Width */}
-                <div className="relative w-[407px] h-[289px]">
+                <div className="relative w-[407px] h-[289px]"><Link href="/Category">
                     <Image
                         src={categories[0].imageSrc}
                         alt={categories[0].label}
                         layout="fill"
                         objectFit="cover"
                         className="rounded-[20px]"
-                    />
+                    /></Link>
                 </div>
 
                 {/* Formal - 684px Width */}
