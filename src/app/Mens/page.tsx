@@ -1,9 +1,9 @@
 'use client';
-import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from "react";
+import { Key, useState } from "react";
 import Image from 'next/image';
 
 interface Review {
-  id: Key;
+  id: number;
   rating: number;
   comment: string;
   customerName: string;
@@ -11,12 +11,11 @@ interface Review {
 }
 
 const MenClothingPage = () => {
-  const [tab, setTab] = useState("details");
+  const [tab, setTab] = useState<"details" | "reviews" | "faqs">("details");
 
   const reviews: Review[] = [
     { id: 1, rating: 5, comment: "This product exceeded my expectations!", customerName: "John Doe", isVerified: true },
     { id: 2, rating: 4, comment: "Great product, but shipping was slow.", customerName: "Jane Smith", isVerified: false },
-    // Add other reviews here
   ];
 
   return (
@@ -125,22 +124,19 @@ const MenClothingPage = () => {
         <div className="flex justify-center space-x-8">
           <button
             onClick={() => setTab("details")}
-            className={`${tab === "details" ? "border-b-2 border-black" : ""
-              } pb-2`}
+            className={`${tab === "details" ? "border-b-2 border-black" : ""} pb-2`}
           >
             Product Details
           </button>
           <button
             onClick={() => setTab("reviews")}
-            className={`${tab === "reviews" ? "border-b-2 border-black" : ""
-              } pb-2`}
+            className={`${tab === "reviews" ? "border-b-2 border-black" : ""} pb-2`}
           >
             Ratings & Reviews
           </button>
           <button
             onClick={() => setTab("faqs")}
-            className={`${tab === "faqs" ? "border-b-2 border-black" : ""
-              } pb-2`}
+            className={`${tab === "faqs" ? "border-b-2 border-black" : ""} pb-2`}
           >
             FAQs
           </button>
@@ -150,8 +146,7 @@ const MenClothingPage = () => {
         <div className="mt-6 text-center">
           {tab === "details" && (
             <p>
-              This t-shirt is crafted with high-quality materials ensuring
-              durability and comfort. Available in various sizes and colors.
+              This t-shirt is crafted with high-quality materials ensuring durability and comfort. Available in various sizes and colors.
             </p>
           )}
           {tab === "reviews" && (
@@ -160,7 +155,7 @@ const MenClothingPage = () => {
               {reviews.map((review: Review) => (
                 <div key={review.id} className="mb-4">
                   <div className="flex justify-center space-x-1 mb-2">
-                    {[...Array(5)].map((_, i) => (
+                    {[...Array(5)].map((_, i: number) => (
                       <span
                         key={i}
                         className={`${i < review.rating ? "text-yellow-400" : "text-gray-300"}`}
