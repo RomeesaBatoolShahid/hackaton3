@@ -1,5 +1,6 @@
 import React from "react";
 import { Star } from "lucide-react";
+import Image from 'next/image'; // Import Image from next/image
 
 const NewArrivals = () => {
   const products = [
@@ -42,10 +43,13 @@ const NewArrivals = () => {
             key={product.id}
             className="flex flex-col items-center space-y-2 border border-gray-200 rounded-lg p-4 transition transform hover:scale-105 hover:shadow-2xl"
           >
-            <img
+            {/* Use Next.js Image component here */}
+            <Image
               src={product.image}
               alt={product.name}
-              className="h-[298px] w-[295px] object-cover rounded"
+              width={295}  // Add width for Next.js Image optimization
+              height={298} // Add height for Next.js Image optimization
+              className="object-cover rounded"
             />
             <h3 className="text-lg font-medium">{product.name}</h3>
             <div className="flex items-center">

@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { Facebook, Github, Instagram, Mail, Twitter } from 'lucide-react';
+import { Facebook, Github, Instagram, Twitter } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 

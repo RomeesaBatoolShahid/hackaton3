@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from "react";
+import Image from "next/image";  // Import the Image component from next/image
 type Section = "filter" | "price" | "colors" | "sizes" | "style";
 
 const CategoryPage = () => {
@@ -46,9 +47,7 @@ const CategoryPage = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed lg:relative overflow-hidden ${
-          isSidebarOpen ? "block" : "hidden"
-        } lg:block w-full lg:w-[295px] lg:h-[1220px] bg-white p-4 pl-6 overflow-hidden lg:overflow-y-auto transition-all duration-300`}
+        className={`fixed lg:relative overflow-hidden ${isSidebarOpen ? "block" : "hidden"} lg:block w-full lg:w-[295px] lg:h-[1220px] bg-white p-4 pl-6 overflow-hidden lg:overflow-y-auto transition-all duration-300`}
       >
         {/* Filters Heading */}
         <h2 className="text-lg font-bold mb-4">Filters</h2>
@@ -198,38 +197,42 @@ const CategoryPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {products.map((product) => (
             <div key={product.id} className="bg-white shadow-md rounded-lg overflow-hidden">
-              <img src={product.image} alt={product.name} className="w-full h-[295px] object-cover" />
+              {/* Replacing <img> with <Image /> */}
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={400}
+                height={295}
+                className="w-full h-[295px] object-cover"
+              />
               <div className="p-4 text-center">
                 <h3 className="font-medium mb-2">{product.name}</h3>
                 <p className="text-gray-700">{product.price}</p>
               </div>
-              
             </div>
           ))}
-          
         </div>
         {/* Pagination */}
-<div className="flex flex-wrap justify-center items-center mt-8 gap-2">
-  <button
-    className="px-3 py-2 bg-gray-200 rounded-md hover:bg-gray-300 text-sm md:text-base"
-  >
-    ← Previous
-  </button>
-  {[1, 2, 3, 4, 5].map((page) => (
-    <button
-      key={page}
-      className="px-3 py-2 bg-gray-100 hover:bg-blue-600 hover:text-white rounded-md text-sm md:text-base"
-    >
-      {page}
-    </button>
-  ))}
-  <button
-    className="px-3 py-2 bg-gray-200 rounded-md hover:bg-gray-300 text-sm md:text-base"
-  >
-    Next →
-  </button>
-</div>
-
+        <div className="flex flex-wrap justify-center items-center mt-8 gap-2">
+          <button
+            className="px-3 py-2 bg-gray-200 rounded-md hover:bg-gray-300 text-sm md:text-base"
+          >
+            ← Previous
+          </button>
+          {[1, 2, 3, 4, 5].map((page) => (
+            <button
+              key={page}
+              className="px-3 py-2 bg-gray-100 hover:bg-blue-600 hover:text-white rounded-md text-sm md:text-base"
+            >
+              {page}
+            </button>
+          ))}
+          <button
+            className="px-3 py-2 bg-gray-200 rounded-md hover:bg-gray-300 text-sm md:text-base"
+          >
+            Next →
+          </button>
+        </div>
       </div>
     </div>
   );
