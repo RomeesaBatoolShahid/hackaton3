@@ -1,6 +1,6 @@
 'use client'
 import React, { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline"; // Importing Heroicons
 
 const reviews = [
   { id: 1, rating: 5, comment: "This product exceeded my expectations! I love the quality and design. Definitely worth the purchase.", customerName: "John Doe", isVerified: true },
@@ -36,10 +36,10 @@ const OurHappyCustomers = () => {
         <h2 className="text-3xl font-extrabold text-gray-800">Our Happy Customers</h2>
         <div className="flex space-x-4">
           <button onClick={scrollLeft} className="text-gray-700 hover:text-gray-900">
-            <ChevronLeft size={32} />
+            <ChevronLeftIcon className="h-8 w-8" />
           </button>
           <button onClick={scrollRight} className="text-gray-700 hover:text-gray-900">
-            <ChevronRight size={32} />
+            <ChevronRightIcon className="h-8 w-8" />
           </button>
         </div>
       </div>
@@ -73,4 +73,3 @@ const OurHappyCustomers = () => {
 };
 
 export default OurHappyCustomers;
-
