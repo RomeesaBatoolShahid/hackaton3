@@ -1,5 +1,6 @@
 'use client';
 import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from "react";
+import Image from 'next/image';
 
 const MenClothingPage = () => {
   const [tab, setTab] = useState("details");
@@ -22,35 +23,43 @@ const MenClothingPage = () => {
         <div className="flex space-x-4">
           {/* Big Image */}
           <div>
-            <img
+            <Image
               src="/main.png"
               alt="Product Big"
-              className="w-[530px] h-[444px] object-cover rounded-lg"
+              width={530}
+              height={444}
+              className="object-cover rounded-lg"
             />
           </div>
           {/* Small Images */}
           <div className="flex flex-col space-y-4">
-            <img
+            <Image
               src="/img11.png"
               alt="Small 1"
-              className="w-[167px] h-[152px] object-cover rounded-lg"
+              width={167}
+              height={152}
+              className="object-cover rounded-lg"
             />
-            <img
+            <Image
               src="/img12.png"
               alt="Small 2"
-              className="w-[167px] h-[152px] object-cover rounded-lg"
+              width={167}
+              height={152}
+              className="object-cover rounded-lg"
             />
-            <img
+            <Image
               src="/img13.png"
               alt="Small 3"
-              className="w-[167px] h-[152px] object-cover rounded-lg"
+              width={167}
+              height={152}
+              className="object-cover rounded-lg"
             />
           </div>
         </div>
 
         {/* Product Details */}
         <div className="flex-1 space-y-4">
-          <h1 className="text-3xl font-bold">Men's Casual T-Shirt</h1>
+          <h1 className="text-3xl font-bold">Men&apos;s Casual T-Shirt</h1>
           <div className="flex items-center space-x-2">
             ⭐⭐⭐⭐⭐ <span className="text-gray-500">(4.5 out of 5)</span>
           </div>
@@ -182,71 +191,78 @@ const MenClothingPage = () => {
       <div className="mt-12">
         <h2 className="text-2xl font-bold mb-4 text-center">You Might Also Like These</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-        <div>
-  <img
-    src="/polo.png"
-    alt="Polo with Contrast Trims"
-    className="w-[295px] h-[298px] object-cover rounded-lg"
-  />
-  <p className="mt-2 text-center">Men's V-Neck T-Shirt</p>
-  <div className="flex justify-center mt-1 text-yellow-500">
-    <span className="text-lg mr-1">★</span>
-    <span className="text-lg mr-1">★</span>
-    <span className="text-lg mr-1">★</span>
-    <span className="text-lg mr-1">★</span>
-    <span className="text-lg text-gray-400">☆</span>
-  </div>
-  <p className="text-center text-gray-700">$19.99</p>
-</div>
-<div>
-  <img
-    src="/gradient.png"
-    alt="Gradient Graphic T-shirt"
-    className="w-[295px] h-[298px] object-cover rounded-lg"
-  />
-  <p className="mt-2 text-center">Men's Polo T-Shirt</p>
-  <div className="flex justify-center mt-1 text-yellow-500">
-    <span className="text-lg mr-1">★</span>
-    <span className="text-lg mr-1">★</span>
-    <span className="text-lg mr-1">★</span>
-    <span className="text-lg mr-1">★</span>
-    <span className="text-lg text-gray-400">☆</span>
-  </div>
-  <p className="text-center text-gray-700">$24.99</p>
-</div>
-<div>
-  <img
-    src="/polo2.png"
-    alt="Polo with Tipping Details"
-    className="w-[295px] h-[298px] object-cover rounded-lg"
-  />
-  <p className="mt-2 text-center">Men's Slim Fit T-Shirt</p>
-  <div className="flex justify-center mt-1 text-yellow-500">
-    <span className="text-lg mr-1">★</span>
-    <span className="text-lg mr-1">★</span>
-    <span className="text-lg mr-1">★</span>
-    <span className="text-lg text-gray-400">☆</span>
-    <span className="text-lg text-gray-400">☆</span>
-  </div>
-  <p className="text-center text-gray-700">$22.99</p>
-</div>
-<div>
-  <img
-    src="/blackstrips.png"
-    alt="Black Striped T-shirt"
-    className="w-[295px] h-[298px] object-cover rounded-lg"
-  />
-  <p className="mt-2 text-center">Men's Crew Neck T-Shirt</p>
-  <div className="flex justify-center mt-1 text-yellow-500">
-    <span className="text-lg mr-1">★</span>
-    <span className="text-lg mr-1">★</span>
-    <span className="text-lg text-gray-400">☆</span>
-    <span className="text-lg text-gray-400">☆</span>
-    <span className="text-lg text-gray-400">☆</span>
-  </div>
-  <p className="text-center text-gray-700">$18.99</p>
-</div>
-
+          <div>
+            <Image
+              src="/polo.png"
+              alt="Polo with Contrast Trims"
+              width={295}
+              height={298}
+              className="object-cover rounded-lg"
+            />
+            <p className="mt-2 text-center">Men&apos;s V-Neck T-Shirt</p>
+            <div className="flex justify-center mt-1 text-yellow-500">
+              <span className="text-lg mr-1">★</span>
+              <span className="text-lg mr-1">★</span>
+              <span className="text-lg mr-1">★</span>
+              <span className="text-lg mr-1">★</span>
+              <span className="text-lg text-gray-400">☆</span>
+            </div>
+            <p className="text-center text-gray-700">$19.99</p>
+          </div>
+          <div>
+            <Image
+              src="/gradient.png"
+              alt="Gradient Graphic T-shirt"
+              width={295}
+              height={298}
+              className="object-cover rounded-lg"
+            />
+            <p className="mt-2 text-center">Men&apos;s Polo T-Shirt</p>
+            <div className="flex justify-center mt-1 text-yellow-500">
+              <span className="text-lg mr-1">★</span>
+              <span className="text-lg mr-1">★</span>
+              <span className="text-lg mr-1">★</span>
+              <span className="text-lg mr-1">★</span>
+              <span className="text-lg text-gray-400">☆</span>
+            </div>
+            <p className="text-center text-gray-700">$24.99</p>
+          </div>
+          <div>
+            <Image
+              src="/polo2.png"
+              alt="Polo with Tipping Details"
+              width={295}
+              height={298}
+              className="object-cover rounded-lg"
+            />
+            <p className="mt-2 text-center">Men&apos;s Slim Fit T-Shirt</p>
+            <div className="flex justify-center mt-1 text-yellow-500">
+              <span className="text-lg mr-1">★</span>
+              <span className="text-lg mr-1">★</span>
+              <span className="text-lg mr-1">★</span>
+              <span className="text-lg text-gray-400">☆</span>
+              <span className="text-lg text-gray-400">☆</span>
+            </div>
+            <p className="text-center text-gray-700">$22.99</p>
+          </div>
+          <div>
+            <Image
+              src="/blackstrips.png"
+              alt="Black Striped T-shirt"
+              width={295}
+              height={298}
+              className="object-cover rounded-lg"
+            />
+            <p className="mt-2 text-center">Men&apos;s Crew Neck T-Shirt</p>
+            <div className="flex justify-center mt-1 text-yellow-500">
+              <span className="text-lg mr-1">★</span>
+              <span className="text-lg mr-1">★</span>
+              <span className="text-lg text-gray-400">☆</span>
+              <span className="text-lg text-gray-400">☆</span>
+              <span className="text-lg text-gray-400">☆</span>
+            </div>
+            <p className="text-center text-gray-700">$18.99</p>
+          </div>
         </div>
       </div>
     </div>
