@@ -2,9 +2,18 @@
 import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useState } from "react";
 import Image from 'next/image';
 
+interface Review {
+  id: Key;
+  rating: number;
+  comment: string;
+  customerName: string;
+  isVerified: boolean;
+}
+
 const MenClothingPage = () => {
   const [tab, setTab] = useState("details");
-  const reviews = [
+
+  const reviews: Review[] = [
     { id: 1, rating: 5, comment: "This product exceeded my expectations!", customerName: "John Doe", isVerified: true },
     { id: 2, rating: 4, comment: "Great product, but shipping was slow.", customerName: "Jane Smith", isVerified: false },
     // Add other reviews here
@@ -148,7 +157,7 @@ const MenClothingPage = () => {
           {tab === "reviews" && (
             <div>
               {/* Reviews */}
-              {reviews.map((review: { id: Key | null | undefined; rating: number; comment: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; customerName: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; isVerified: any; }) => (
+              {reviews.map((review: Review) => (
                 <div key={review.id} className="mb-4">
                   <div className="flex justify-center space-x-1 mb-2">
                     {[...Array(5)].map((_, i) => (
